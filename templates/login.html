@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1> Diccionario </h1>
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+ 
+<form class="navbar-form navbar-right" role="form" action="{% url "login" %}"
+    method="post" accept-charset="utf-8">	   
+    {% csrf_token %}
+    <p>
+    Username: <input type="text" class="form-control" name="username">
+    </p>
+    <p>
+    Password: <input type="password" class="form-control" name="password">
+    </p>
+    <p>
+        <input type="submit" value="Log in">
+    </p>
+</form>
+ 
+{% endblock %}
+
